@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 nft_gifts/data/*
 !nft_gifts/data/.gitkeep
+
+venv/
+.idea
+*.DS_Store
