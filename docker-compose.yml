@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+#  db:
+#    image: postgres
+#    volumes:
+#      - ./data/db:/var/lib/postgresql/data
+#    environment:
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+  web:
+    container_name: web
+    build: ./nft_gifts
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./nft_gifts/:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - PRIVATE_KEY
+    depends_on:
+      - db
+
+  node_kostil:
+    build: ./node-kostil
+    command: [ "npm", "run", "dev" ]
+    ports:
+      - 8001:8080
+    volumes:
+      - ./node-kostil/src/:/usr/src/app/src/

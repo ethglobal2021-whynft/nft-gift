@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"  href="{% static 'css/style.css' %}">
+	<title>NFT.gifts Receiving</title>
+</head>
+<body class="page-body">
+	<div class="container">
+		<header class="main_header">
+		  	<img class="logo" src="{% static 'img/logo.svg' %}">
+		  	<ul class="menu list">
+		  		<li><a class="special_font menu_item link" href="">Home</a></li>
+		  		<li><a class="special_font menu_item link" href="">About us</a></li>
+		  		<li><a class="special_font menu_item link" href="">FAQ</a></li>
+		  	</ul>
+		  	<a class="link special_font header_link" href="">Send a gift</a>
+	  	</header>
+		<main>
+			<div class="choise">
+				<h1 class="special_font choise_title">Do you have ETH wallet?</h1>
+				<button class="button-black button yes-button">Yes</button>
+				<button class="button-black button no-button">No</button>
+			</div>
+			<div class="explanation">
+				<div class="keys_item question_container">
+					<p class="question">What is ETH wallet?</p>
+					<img class="question_img" src="{% static 'img/question-iqon.svg' %}">
+				</div>
+				<div class="explanation_answer">
+					<p>Ethereum wallets are applications that let you interact with your Ethereum account. Think of it like an internet banking app – without the bank. Your wallet lets you read your balance, send transactions and connect to applications.</p>
+					<p>You need a wallet to send funds and manage your ETH.   Your wallet is only a tool for managing your Ethereum account. That means you can swap wallet providers at any time. Many wallets also let you manage several Ethereum accounts from one application.</p>
+					<p>You can create wallet on services like <a>MetaMask</a> or <a>CoinBase</a></p>
+			</div>
+			</div>
+			<div class="create visually-hidden">
+				<h2 class="create_title">Enter random text to generate unic wallet <span>(example: eat some more of these 	french buns)</span></h2>
+				<label for="seed-phrase">
+    	            <input  class="create_input" type="text" name="seed-phrase" placeholder="random text" id="seed-phrase">
+    	        </label> 
+				<button class="generation-button button">Generate</button>
+			</div>
+			<div class="keys visually-hidden">
+				<h2>Save the keys to send NFT</h2>
+				<ul class="keys_list list">
+					<li class="keys_item">
+						<p class="key"> </p>
+						<button class="generation-button button">Generate</button>
+					</li>
+					<li class="keys_item">
+						<p class="keys_public key">{{ public_key }}</p>
+						<button class="keys_advice keys_advice-public">Copy it to give other people</button>
+					</li>
+					<li class="keys_item">
+						<p class="keys_private key"> {{ private_key }}</p>
+						<button class="keys_advice keys_advice-private">Copy it to save access to the wallet (this is the password)</button>
+					</li>
+				</ul>
+				<div class="keys_item">
+					<p class="question">How to save the keys?</p>
+					<img class="question_img" src="{% static 'img/question-iqon.svg' %}">
+				</div>
+				<a class="keys-button link" href="checking_page">I saved the keys, start sending</a>
+			</div>
+			<div class="enter visually-hidden">
+				<label for="user-vallet">
+    	            <input  class="enter_input" type="text" name="user-vallet" placeholder="Enter your ETH address" id="seed-phrase">
+    	        </label>
+				<button class="enter-button">Enter</button>
+			</div>
+			<div class="confirmation visually-hidden">
+				<h2 class="confirmation_title special_font">Check address to send NFT</h2>
+				<div class="keys_item">
+					<p class="key"></p>
+				</div>
+				<p>Check the correctness of the address, if you made a mistake, the sending cannot be canceled</p>
+				<a class="confirmation-button link" href="checking_page">Send NFT</a>
+			</div>
+			<div class="steps receiving_steps">
+				<ul class="steps_list list">
+				  	<li class="steps_item  step1 current_step">
+					  	<h3 class="steps_title">Step 1</h3>
+					  	<p class="steps_text">You open the gift link</p>
+				  	</li>
+				  	<li class="steps_item  step2 current_step">
+					  	<h3 class="steps_title">Step 2</h3>
+					  	<p class="steps_text">You enter or create a wallet address</p>
+				  	</li>
+				  	<li class="steps_item  step3">
+					  	<h3 class="steps_title">Step 3</h3>
+					  	<p class="steps_text">We send NFT to your address</p>
+				  	</li>
+				  	<li class="steps_item  step4">
+					  	<h3 class="steps_title">Step 4</h3>
+					  	<p class="steps_text">You are checking the NFT on Rarible</p>
+				  	</li>
+				  	<li class="steps_item">
+					  	<h3 class="steps_title">Step 5</h3>
+					  	<p class="steps_text">You control the NFT</p>
+				  	</li>
+			  	</ul>
+			</div>
+		</main>
+	</div>
+	<script type="text/javascript">
+    var yesButton = document.querySelector(".yes-button");
+    var noButton = document.querySelector(".no-button");
+    var generationButton = document.querySelector(".generation-button");
+    var keysButton = document.querySelector(".keys-button");
+    var enterButton = document.querySelector(".enter-button");
+    var confirmationButton = document.querySelector(".confirmation-button");
+    var copyPrivateKeyButton = document.querySelector(".keys_advice-private");
+    var copyPublicKeyButton = document.querySelector(".keys_advice-public");
+
+    var privateKey = document.querySelector(".keys_private");
+    var publicKey = document.querySelector(".keys_public");
+    var choiseTitle =  document.querySelector(".choise_title");
+    var stepItem = document.querySelector(".step3");
+   	var explanationBlock = document.querySelector(".explanation");
+    var createValletBlock = document.querySelector(".create");
+    var keysBlock = document.querySelector(".keys");
+    var enterBlock = document.querySelector(".enter");
+    var confirmationBlock = document.querySelector(".confirmation");
+    var successBlock = document.querySelector(".success");
+
+    noButton.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        createValletBlock.classList.remove("visually-hidden");
+        explanationBlock.classList.add("visually-hidden");
+        noButton.classList.remove("button-black");
+        noButton.classList.remove("empty-button");
+        yesButton.classList.remove("button-black");
+        noButton.classList.add("green-button");
+        yesButton.classList.add("empty-button");
+        enterBlock.classList.add("visually-hidden");
+      });
+
+    generationButton.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        choiseTitle.classList.add("visually-hidden");
+        createValletBlock.classList.add("visually-hidden");
+        keysBlock.classList.remove("visually-hidden");
+        yesButton.classList.add("visually-hidden");
+        noButton.classList.add("visually-hidden");
+        stepItem.classList.add("current_step");
+      });
+
+    yesButton.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        enterBlock.classList.remove("visually-hidden");
+        explanationBlock.classList.add("visually-hidden");
+        noButton.classList.remove("button-black");
+        yesButton.classList.remove("empty-button");
+        yesButton.classList.remove("button-black");
+        noButton.classList.add("empty-button");
+        yesButton.classList.add("green-button");
+        createValletBlock.classList.add("visually-hidden");
+      });
+
+    enterButton.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        choiseTitle.classList.add("visually-hidden");
+        enterBlock.classList.add("visually-hidden");
+        confirmationBlock.classList.remove("visually-hidden");
+        yesButton.classList.add("visually-hidden");
+        noButton.classList.add("visually-hidden");
+        stepItem.classList.add("current_step");
+      });
+
+    copyPrivateKeyButton.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        function copyToClipboard(privateKey) {
+    		privateKey.select();
+  			document.execCommand("copy");
+		}
+      });
+
+    copyPublicKeyButton.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        function copyToClipboard(publicKey) {
+    		publicKey.select();
+  			document.execCommand("copy");
+		}
+      });
+  </script>
+</body>
+</html>

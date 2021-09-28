@@ -1,0 +1,506 @@
+/* Global */
+
+@font-face {
+    font-family: 'sk_concreticaregular';
+    src: url('fonts/skconcretica-webfont.woff2') format('woff2'),
+         url('fonts/skconcretica-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'gropledbold';
+    src: url('fonts/gropled-bold-webfont.woff2') format('woff2'),
+         url('fonts/gropled-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: bold;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.special_font {
+  font-family: 'gropledbold';
+}
+
+.link {
+  text-decoration: none;
+  color: ;
+}
+
+.list {
+  display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.page-body {
+  font-family: 'sk_concreticaregular';
+  width: 100vw;
+  background-position-x: center;
+  margin: 0;
+  padding: 0px;
+  font-family: ;
+  background-image: url(img/desktop-back.png);
+  background-repeat: no-repeat;
+ }
+
+.button {
+	background-color: none;
+	color: white;
+	font-size: ;
+	border: none;
+}
+
+.modal {
+	display: none;
+}
+
+.container {
+  width: 1200px;
+  position: relative;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+/* Header */
+.main_header {
+  padding-top: 40px;
+  width: 1200px;
+  margin: 0px auto 50px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.header_link {
+  color: #5FAC5D;
+  text-decoration: underline;
+}
+
+.menu {
+  width: 260px;
+  justify-content: space-between;
+}
+
+.menu_item {
+  color: black;
+}
+
+/* Main */
+.main_title {
+  margin: 0px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 66px;
+  line-height: 80px;
+}
+
+/* Card of gift */
+
+.gift-card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.gift-card_description {
+  width: 600px;
+  padding: 0px;
+}
+
+.gift_pic {
+  width:  539px;
+  height: 404px;
+}
+
+.description_title {
+  margin: 0px;
+  font-size: 24px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.description_text {
+  margin: 15px 0px 43px;
+  color: #8C8C8C;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.description_link {
+  color: #5FAC5D;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.description_author {
+  color: #5FAC5D;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.message {
+  background-image: url(img/card-back.png);
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 223px;
+  padding: 26px 0px 0px 72px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin: 0;
+}
+
+.star {
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
+}
+
+.question_img {
+  width: 20px;
+  height: 20px;
+}
+
+.message_title {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.message_title::before {
+  width: 20px;
+  height: 20px
+  background-color:red;
+}
+
+.message_text {
+  width: 495px;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+/* Steps */
+
+.steps {
+  margin: 54px 0px 0px;
+  width: 1200px;
+}
+
+.steps_list {
+  justify-content: space-between;
+  list-style: disc;
+}
+
+.steps_item {
+  width: 195px;
+  color: #8C8C8C;
+}
+
+.steps_title {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.steps_text {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.current_step {
+  color: black;
+}
+
+/* Buttons */
+
+.next-button, .capability-button {
+  margin: 48px auto 60px;
+  padding-top: 0px;
+  padding-left: 91px;
+  display: block;
+  background-image: url(img/button-green.png);
+  background-repeat: no-repeat;
+  width: 222px;
+  height: 90px;
+  font-size: 36px;
+  line-height: 80px;
+}
+
+.button-black {
+  font-family: 'sk_concreticaregular';
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url(img/black-button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 155px;
+  height: 85px;
+  font-size: 36px;
+  line-height: 80px;
+  margin-top: 30px; 
+}
+
+.button-black:nth-child(2) {
+  margin-left: 80px;
+  margin-right: 12px;
+}
+
+.generation-button, .enter-button {
+  font-family: 'sk_concreticaregular';
+  background-color: #5FAC5D;
+  border: none;
+  width: 190px;
+  height: 60px;
+  font-size: 24px;
+  line-height: 28px;
+  margin-left: 36px;
+}
+
+.generation-button {
+  position: relative;
+  top: -2px;
+  margin: 0;
+}
+
+.green-button {
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url(img/green-button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 155px;
+  height: 85px;
+  font-size: 36px;
+  line-height: 80px;
+  margin-top: 30px; 
+}
+
+.empty-button {
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url(img/empty-button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 155px;
+  height: 85px;
+  font-size: 36px;
+  line-height: 80px;
+  margin-top: 30px; 
+  color: black;
+}
+
+.green-button:nth-child(2) {
+  margin-left: 80px;
+  margin-right: 12px;
+}
+
+.empty-button:nth-child(2) {
+  margin-left: 80px;
+  margin-right: 12px;
+}
+
+.confirmation-button {
+  display: block;
+  background-image: url(img/send-button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 236px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  margin: 0px auto 0px;
+  font-size: 36px;
+  line-height: 80px;
+  color: white;
+  padding-left: 77px;
+  position: absolute;
+  top: 748px;
+  left: 447px;
+}
+
+
+.open-nft-button {
+  display: block;
+  background-image: url(img/open-nft-button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 255px;
+  height: 90px;
+  font-size: 36px;
+  line-height: 80px;
+  padding-left: 102px;
+  margin-top: 42px; 
+}
+
+.capability-button {
+  padding-left: 63px;
+  width: 380px;
+  height: 90px;
+  background-image: url(img/capability-button.png);
+}
+
+.keys-button {
+  display: block;
+  color: white;
+  background-image: url(img/keys-button.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 619px;
+  height: 90px;
+  font-size: 36px;
+  line-height: 80px;
+  padding-left: 113px;
+  margin: 42px auto 0px; 
+  position: absolute;
+  top: 700px;
+  left: 241px;
+}
+
+.key {
+  font-family: 'sk_concreticaregular';
+}
+
+/* Receiving */
+
+.choise {
+  display: flex;
+  position: relative;
+}
+
+.choise_title {
+  font-weight: bold;
+  font-size: 66px;
+  line-height: 80px;
+}
+
+.question {
+  font-size: 24px;
+  line-height: 40px;
+  text-decoration: underline;
+}
+
+.question::after {
+  width: 20px;
+  height: 20px;
+  background-image: url(img/question-iqon.svg);
+  margin-left: 14px;
+}
+
+
+.explanation_answer {
+  width: 979px;
+  font-size:  14px;
+  line-height: 30px;
+}
+
+.explanation_answer p {
+  padding-top: 20px;
+}
+
+.create_input, .enter_input {
+  margin-right: 36px; 
+  width: 527px;
+  height: 28px;
+  font-size: 24px;
+  line-height: 28px;
+  padding: 16px 30px;
+}
+
+.create_title {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.create_title span {
+  font-size: 12px;
+  line-height: 40px;
+}
+
+.receiving_steps {
+  position: absolute;
+  top: 706px;
+  padding: 0px 0px 70px;
+}
+
+.keys {
+  position: relative;
+}
+
+.key {
+  display: block;
+  background-color: white;
+  width: 527px;
+  height: 28px;
+  font-size: 24px;
+  line-height: 28px;
+  padding: 16px 30px;
+  color: black;
+}
+
+.keys_list {
+  display: inherit;
+}
+
+.keys_item {
+  display: flex;
+}
+
+.keys_advice {
+  font-family: 'sk_concreticaregular';
+  width: 577px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  line-height: 28px;
+  margin-top: 36px;
+}
+
+.confirmation {
+  position: relative;
+}
+
+.confirmation_title {
+  font-weight: bold;
+  font-size: 66px;
+  line-height: 80px;
+}
+
+.question_container {
+  align-items: center;
+}
+
+/* Checking page */
+
+.checking_text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.checking_img {
+  border: 1px solid #5FAC5D;
+}
+
+
+
+
+
+
+
+
