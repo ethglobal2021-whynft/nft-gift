@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'web.apps.WebConfig',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+DEFAULT_TESTNET_SENDER_PRIVATE_KEY = os.getenv("DEFAULT_TESTNET_SENDER_PRIVATE_KEY", 'foo')
+DEFAULT_TESTNET_SENDER_ADDRESS = os.getenv("DEFAULT_TESTNET_SENDER_ADDRESS", 'foo')
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # todo: use gmail
+DEFAULT_FROM_EMAIL = 'debug_nft_gifts@whynft.com'
