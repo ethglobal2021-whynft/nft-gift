@@ -16,10 +16,10 @@ services:
       - ./.env
 
   web:
-    build: django
+    build: src
 #    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./django/:/opt/
+      - ./src/:/opt/
     ports:
       - 8000:8000
     env_file:
