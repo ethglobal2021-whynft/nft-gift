@@ -127,8 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-nft_gifts/data/*
-!nft_gifts/data/.gitkeep
+django/data/*
+!django/data/.gitkeep
 
 venv/
 .idea
