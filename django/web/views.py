@@ -2,12 +2,22 @@ import logging
 from eth_account import Account
 import secrets
 
-import requests
-
+from django.views.generic import TemplateView, View
 from django.shortcuts import render, HttpResponse
+
+import requests
 
 
 logger = logging.getLogger(__name__)
+
+
+class IndexView(View):
+    def get(self, request):
+        target_view = 'panel:leads' if request.user.is_authenticated else 'panel:login'
+        return redirect(reverse(target_view))
+
+
+
 
 
 def index(request):
