@@ -27,10 +27,10 @@ services:
     depends_on:
       - db
 
-  node_kostil:
-    build: ./node-kostil
-    command: [ "npm", "run", "dev" ]
-    ports:
-      - 8001:8080
-    volumes:
-      - ./node-kostil/src/:/usr/src/app/src/
+#  node_kostil:
+#    build: ./node-kostil
+#    command: [ "npm", "run", "dev" ]
+#    ports:
+#      - 8001:8080
+#    volumes:
+#      - ./node-kostil/src/:/usr/src/app/src/
