@@ -70,7 +70,7 @@ class SendAndCheckGiftView(DetailView):  # todo: view is really synced
             return HttpResponse(status=400)
 
 
-        logger.info(f"Start sending gift {self.object.id} to {self.object.receiver.email}")
+        logger.info(f"Start sending gift {self.object.id} to {self.object.receiver.email} with wallet: {to_wallet}")
         transfered = transfer_gift(gift=self.object, ethereum_address=to_wallet)
         if not transfered:
             return HttpResponse(status=409)  # todo
