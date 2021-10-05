@@ -27,4 +27,4 @@ docker-compose up --build
 
 ### To create new gift
 - via django admin or via db connector go to gift table and create a link with specifying corresponding  rarible meta.
-- check the link after that it works as expected
+- check the link after that it works as expected.

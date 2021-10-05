@@ -20,7 +20,7 @@ class Gift(models.Model):
     receiver = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='gifts_received')
 
     obtaining_url = models.URLField("Url that match receiver with a gift", unique=True)  # todo: create generator
-    text = models.TextField('What do you want to wish')
+    text = models.TextField('Your wishes')
 
     rarible_url = models.URLField('Url to rarible post (aka token)')
     rarible_title = models.CharField(max_length=256)  # rarible has not its api for this
