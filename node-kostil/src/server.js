@@ -16,7 +16,7 @@ app.post('/', async (request, response) => {
   // Pass ipfs & user_address
   console.log('get', request.body);
   try {
-    const link = await Transfer(request.body.user, request.body.contract, request.body.token, request.body.debug, request.body.private_ext)
+    const link = await Transfer(request.body.user_receiver, request.body.contract, request.body.token, request.body.sender_private_ext)
     console.log('Response with link', link);
     response.json({link: link, status: "OK"});
   } catch (error) {
