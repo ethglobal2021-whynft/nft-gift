@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from django.core.mail import send_mail
 
-from web.models import Client, Gift, EthereumWallet
+from web.models import Client, Gift
 
 logger = logging.getLogger(__name__)
 
@@ -16,19 +16,8 @@ def warm_up_with_default_test_net_sender_and_gift(
 
     !a lot of hardcoded values. todo
     """
-
-    test_net_address = settings.DEFAULT_SENDER_ADDRESS
-    test_net_private = settings.DEFAULT_SENDER_PRIVATE_KEY
-
     client, created = Client.objects.get_or_create(name='sender', email='sender@google.com')
     logger.info(f'warmed up with {client=}')
-
-    wallet, created = EthereumWallet.objects.get_or_create(
-        client=client,
-        address=test_net_address,
-        private_key=test_net_private,
-    )
-    logger.info(f'warmed up with {wallet=}')
 
     receiver, created = Client.objects.get_or_create(name='receiver', email='receiver@google.com')
 
@@ -45,7 +34,7 @@ def warm_up_with_default_test_net_sender_and_gift(
 
 
 def send_gift_email(gift: Gift):
-    sender = gift.seder
+    sender = gift.sender
     receiver = gift.receiver
     receiver_name = (receiver.name if receiver.name else receiver.email).capitalize()
     sender_name = (sender.name if sender.name else sender.email).capitalize()
