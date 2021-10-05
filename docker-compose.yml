@@ -27,10 +27,10 @@ services:
     depends_on:
       - db
 
-#  node_kostil:
-#    build: ./node-kostil
-#    command: [ "npm", "run", "dev" ]
-#    ports:
-#      - 8001:8080
-#    volumes:
-#      - ./node-kostil/src/:/usr/src/app/src/
+  rarible_sdk:
+    build: rarible_sdk
+    command: [ "npm", "run", "dev" ]
+    ports:
+      - 8001:8080
+    volumes:
+      - ./rarible_sdk/src/:/usr/src/app/src/
