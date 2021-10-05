@@ -1,5 +1,15 @@
 # nft-gift
 
+## User Flow
+### Centralized Version (current)
+- Sender wants to present a gift
+- Buy the gift (NFT) to our centralized account
+- Prepare hashed secured link and send it to email
+- With link specify wallet and wait for transfer (from the centralized to specified address) to be completed
+
+### Decentralized Version
+todo: describe
+
 ## Debug
 2 simple steps:
 
@@ -14,3 +24,7 @@ docker-compose up --build
 
 ### To stop
 `cntrl + c`
+
+### To create new gift
+- via django admin or via db connector go to gift table and create a link with specifying corresponding  rarible meta.
+- check the link after that it works as expected
