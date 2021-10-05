@@ -17,8 +17,8 @@ def warm_up_with_default_test_net_sender_and_gift(
     !a lot of hardcoded values. todo
     """
 
-    test_net_address = settings.DEFAULT_TESTNET_SENDER_ADDRESS
-    test_net_private = settings.DEFAULT_TESTNET_SENDER_PRIVATE_KEY
+    test_net_address = settings.DEFAULT_SENDER_ADDRESS
+    test_net_private = settings.DEFAULT_SENDER_PRIVATE_KEY
 
     client, created = Client.objects.get_or_create(name='sender', email='sender@google.com')
     logger.info(f'warmed up with {client=}')

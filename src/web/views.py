@@ -11,7 +11,6 @@ from utils.authorizations import session_authorization_check
 from utils.gift_transfer import transfer_gift
 from web.models import Gift
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -69,8 +68,9 @@ class SendAndCheckGiftView(DetailView):  # todo: view is really synced
         if not to_wallet:  # todo: create eth field as in why-nft
             return HttpResponse(status=400)
 
-
-        logger.info(f"Start sending gift {self.object.id} to {self.object.receiver.email} with wallet: {to_wallet}")
+        logger.info(
+            f"Start sending gift {self.object.id} to {self.object.receiver.email} with wallet: {to_wallet}"
+        )
         transfered = transfer_gift(gift=self.object, ethereum_address=to_wallet)
         if not transfered:
             return HttpResponse(status=409)  # todo

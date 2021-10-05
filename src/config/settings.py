@@ -133,8 +133,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-DEFAULT_TESTNET_SENDER_PRIVATE_KEY = os.getenv("DEFAULT_TESTNET_SENDER_PRIVATE_KEY", 'foo')
-DEFAULT_TESTNET_SENDER_ADDRESS = os.getenv("DEFAULT_TESTNET_SENDER_ADDRESS", 'foo')
+DEFAULT_SENDER_PRIVATE_KEY = os.getenv("DEFAULT_SENDER_PRIVATE_KEY", 'foo')
+DEFAULT_SENDER_ADDRESS = os.getenv("DEFAULT_SENDER_ADDRESS", 'foo')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # todo: use gmail
