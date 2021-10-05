@@ -62,8 +62,8 @@ class SendAndCheckGiftView(DetailView):  # todo: view is really synced
     def get(self, request, to_wallet, *args, **kwargs):
         self.object = get_object_or_404(Gift, pk=request.session['gift'])
 
-        if self.object.received:
-            return HttpResponse(status=208)  # already reported
+        # if self.object.received:
+        #     return HttpResponse(status=208)  # already reported
 
         if not to_wallet:  # todo: create eth field as in why-nft
             return HttpResponse(status=400)
@@ -73,7 +73,7 @@ class SendAndCheckGiftView(DetailView):  # todo: view is really synced
         )
         transfered = transfer_gift(gift=self.object, ethereum_address=to_wallet)
         if not transfered:
-            return HttpResponse(status=409)  # todo
+            return HttpResponse('can not transfer: rarible SDK', status=409)  # todo
 
         logger.info(f'Finally {self.object} transfered and response ready')
         context = self.get_context_data(object=self.object)
