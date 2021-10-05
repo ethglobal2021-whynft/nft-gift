@@ -115,7 +115,7 @@ def receiving(request):
     }
 
     try:
-        r = requests.post('http://nft_gifts_node_kostil_1:8080', json=data)
+        r = requests.post('http://rarible_sdk_1:8080', json=data)
         print(r.content)
     except Exception as e:
         print(f'Exception: {e}')
