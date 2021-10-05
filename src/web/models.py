@@ -26,5 +26,6 @@ class Gift(models.Model):
     rarible_description = models.TextField()  # rarible has not its api for this
     rarible_author = models.CharField(max_length=42)  # rarible has not its api for this
 
+    rarible_transfered_url = models.URLField(null=True, blank=True)
     received = models.BooleanField(default=False)
     created = models.DateTimeField(default=timezone.now)
