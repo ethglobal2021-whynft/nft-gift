@@ -9,8 +9,8 @@ logger = logging.getLogger(__name__)
 
 
 def warm_up_with_default_test_net_sender_and_gift(
-        url="https://rinkeby.rarible.com/token/0x509fd4cdaa29be7b1fad251d8ea0fca2ca91eb60:111442?tab=details",
-        obtaining_url='http://localhost:8000/receive',
+        url="https://img.rarible.com/staging/image/upload/t_big/staging-itemImages/0x509fd4cdaa29be7b1fad251d8ea0fca2ca91eb60:111668/7584a2c3",
+        obtaining_url='foo',
 ):
     """De facto it is our workflow.
 
@@ -36,8 +36,10 @@ def warm_up_with_default_test_net_sender_and_gift(
         sender=client,
         receiver=receiver,
         rarible_url=url,
+        rarible_title='TestTitle',  # todo: hardcoded
+        rarible_description='TestDescription',
         obtaining_url=obtaining_url,
-        text='Hi, this is 4 u, bro!',
+        text='Anya, I congratulate you on your birthday and present the asset to your collection. May your life be as incredible as this picture <3',
     )
     logger.info(f'warmed up with {gift=}')
 
@@ -49,7 +51,7 @@ def send_gift_email(sender: Client, receiver: Client, gift: Gift):
     appendix = (
         '-' * 5 + '\n'
         f"{sender_name} has prepared an nft transfer for you.\n"
-        f"To finally obtain the gift follow the link {gift.obtaining_url}\n"
+        f"To finally obtain the gift follow the link http://localhost/gift/{gift.obtaining_url}\n"
         '-' * 5 + '\n'
         'Sincerely Yours Why-NFT-Team\n'
         'why-nft.com'

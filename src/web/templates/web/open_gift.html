@@ -1,0 +1,70 @@
+{% load static %}
+{% load get_hash_from_url %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"  href="{% static 'css/style.css' %}">
+	<title>NFT.gifts</title>
+</head>
+<body class="page-body">
+	<div class="container">
+		<header class="main_header">
+		  	<img class="logo" src="{% static 'img/logo.svg' %}">
+		  	<ul class="menu list">
+		  		<li><a class="special_font menu_item link" href="">Home</a></li>
+		  		<li><a class="special_font menu_item link" href="">About us</a></li>
+		  		<li><a class="special_font menu_item link" href="">FAQ</a></li>
+		  	</ul>
+		  	<a class="link special_font header_link" href="">Send a gift</a>
+	  	</header>
+	  	<main>
+		  	<h1 class="special_font main_title">You received a NFT gift</h1>
+		  	<div class="gift-card">
+			  	<div style="width:  539px; height: 404px;"><img class="gift_pic" src="{{ gift.rarible_url }}"></div>
+		      	<div class="gift-card_description description">
+		    	  	<h2 class="description_title">{{ gift.rarible_title }}</h2>
+		    	  	<p class="description_text">{{ gift.rarible_description }}
+		    	  		<a class="description_link" href="">more</a><br><!-- todo: wtf? -->
+		    	  		<span class="description_author">The author is {{ gift.rarible_author }}</span></p>
+		    	  	<div class="message">
+		    	  		<div class="name">
+		    	  			<img class="star" src="{% static 'img/star.svg' %}">
+		    	  			<h3 class="message_title">{{ gift.sender.name | title }}</h3>
+		    	  		</div>
+		    	  		<p class="message_text">{{ gift.text }}</p>
+		    	  	</div>
+		     	 </div>
+		  	</div>
+		  	<div class="steps">
+			  	<ul class="steps_list list">
+				  	<li class="steps_item current_step">
+					  	<h3 class="steps_title">Step 1</h3>
+					  	<p class="steps_text">You open the gift link</p>
+				  	</li>
+				  	<li class="steps_item">
+					  	<h3 class="steps_title">Step 2</h3>
+					  	<p class="steps_text">You enter or create a wallet address</p>
+				  	</li>
+				  	<li class="steps_item">
+					  	<h3 class="steps_title">Step 3</h3>
+					  	<p class="steps_text">We send NFT to your address</p>
+				  	</li>
+				  	<li class="steps_item">
+					  	<h3 class="steps_title">Step 4</h3>
+					  	<p class="steps_text">You are checking the NFT on Rarible</p>
+				  	</li>
+				  	<li class="steps_item">
+					  	<h3 class="steps_title">Step 5</h3>
+					  	<p class="steps_text">You control the NFT</p>
+				  	</li>
+			  	</ul>
+		  	</div>
+			{{ request.path|get_hash_from_url }}
+		  	<a class="button link next-button" href="{% url 'web:ethereum_wallet' %}">Get gift</a>
+	  	</main>
+	</div>
+</body>
+</html>

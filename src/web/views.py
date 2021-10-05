@@ -1,23 +1,57 @@
 import logging
 from eth_account import Account
 import secrets
-
-from django.views.generic import TemplateView, View
-from django.shortcuts import render, HttpResponse
-
 import requests
+
+from django.views.generic import TemplateView, View, DetailView, CreateView
+from django.shortcuts import render, HttpResponse
+from django.utils.decorators import decorator_from_middleware
+
+from utils.authorizations import session_authorization_check
+from web.models import Gift
 
 
 logger = logging.getLogger(__name__)
 
 
-class IndexView(View):
-    def get(self, request):
-        target_view = 'panel:leads' if request.user.is_authenticated else 'panel:login'
-        return redirect(reverse(target_view))
+class GiftDetailView(DetailView):  # todo: on no object
+    """1st step
+    We also store special cookie, so it is kinda auth
+    """
+    context_object_name = 'gift'
+    model = Gift
+    slug_field = 'obtaining_url'
+    template_name = 'web/open_gift.html'
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+
+        logger.debug(f"set gift id {self.object.id} to session...")
+        request.session['gift'] = self.object.id
+
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
 
 
+class EhtereumWalletView(TemplateView):
+    template_name = 'web/enter_ethereum_wallet.html'
 
+    @session_authorization_check
+    def get(self, request, *args, **kwargs):
+        return super().get(self, request, *args, **kwargs)
+
+
+# class EhtereumWalletView(View):  # TODO
+#     # 2nd step
+#
+#     def get(self, request):
+#         return render(request, 'receiving.html', {'private_key': private_key, 'public_key': addr})
+
+
+# class IndexView(View):
+#     def get(self, request, *args):
+#         target_view = 'web:web' if request.user.is_authenticated else 'web:web'
+#         return redirect(reverse(target_view))
 
 
 def index(request):
