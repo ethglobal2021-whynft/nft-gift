@@ -44,7 +44,9 @@ def warm_up_with_default_test_net_sender_and_gift(
     logger.info(f'warmed up with {gift=}')
 
 
-def send_gift_email(sender: Client, receiver: Client, gift: Gift):
+def send_gift_email(gift: Gift):
+    sender = gift.seder
+    receiver = gift.receiver
     receiver_name = (receiver.name if receiver.name else receiver.email).capitalize()
     sender_name = (sender.name if sender.name else sender.email).capitalize()
     message = gift.text if gift.text else f"Dear, {receiver_name}!\n\n{sender_name} sent you the NFT Gift!"

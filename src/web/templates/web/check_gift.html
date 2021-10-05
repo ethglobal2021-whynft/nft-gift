@@ -1,5 +1,4 @@
 {% load static %}
-{% load get_hash_from_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"  href="{% static 'css/style.css' %}">
-	<title>NFT.gifts</title>
+	<title>NFT.gifts checking</title>
 </head>
 <body class="page-body">
 	<div class="container">
@@ -21,21 +20,17 @@
 		  	<a class="link special_font header_link" href="">Send a gift</a>
 	  	</header>
 	  	<main>
-		  	<h1 class="special_font main_title">You received a NFT gift</h1>
-		  	<div class="gift-card">
-			  	<div style="width:  539px; height: 404px;"><img class="gift_pic" src="{{ gift.rarible_url }}"></div>
-		      	<div class="gift-card_description description">
-		    	  	<h2 class="description_title">{{ gift.rarible_title }}</h2>
-		    	  	<p class="description_text">{{ gift.rarible_description }}
-		    	  		<a class="description_link" href="">more</a><br><!-- todo: wtf? -->
-		    	  		<span class="description_author">The author is {{ gift.rarible_author }}</span></p>
-		    	  	<div class="message">
-		    	  		<div class="name">
-		    	  			<img class="star" src="{% static 'img/star.svg' %}">
-		    	  			<h3 class="message_title">{{ gift.sender.name | title }}</h3>
-		    	  		</div>
-		    	  		<p class="message_text">{{ gift.text }}</p>
-		    	  	</div>
+		  	<h1 class="special_font main_title">Сheck the NFT on Rarible</h1>
+		  	<div class="gift-card gift-card-checking">
+			  	<div>
+			  		<div style="width:  214px; height: 160px; border: solid 1px black;"><img class="gift_pic gift_pic-checking" src="{{ gift.rarible_url }}"></div>
+			  		<a class="button link open-nft-button" href="https://rarible.com/token/0x60f80121c31a0d46b5279700f9df786054aa5ee5:1375655?tab=details">Open NFT</a>
+			  	</div>
+		      	<div class="checking_block">
+		    	  	<p class="checking_text">We sent the work to your address, now on Rarible your address is listed as the owner of NFT</p>
+		    	  	<img class="checking_img" src="{% static 'img/instruction1.png' %}">
+		    	  	<p class="checking_text">You can sign in on Rarible with your wallet address, then you will see the work in your profile</p>
+		    	  	<img class="checking_img" src="{% static 'img/instruction2.png' %}">
 		     	 </div>
 		  	</div>
 		  	<div class="steps">
@@ -44,15 +39,15 @@
 					  	<h3 class="steps_title">Step 1</h3>
 					  	<p class="steps_text">You open the gift link</p>
 				  	</li>
-				  	<li class="steps_item">
+				  	<li class="steps_item current_step">
 					  	<h3 class="steps_title">Step 2</h3>
 					  	<p class="steps_text">You enter or create a wallet address</p>
 				  	</li>
-				  	<li class="steps_item">
+				  	<li class="steps_item current_step">
 					  	<h3 class="steps_title">Step 3</h3>
 					  	<p class="steps_text">We send NFT to your address</p>
 				  	</li>
-				  	<li class="steps_item">
+				  	<li class="steps_item current_step">
 					  	<h3 class="steps_title">Step 4</h3>
 					  	<p class="steps_text">You are checking the NFT on Rarible</p>
 				  	</li>
@@ -62,7 +57,7 @@
 				  	</li>
 			  	</ul>
 		  	</div>
-		  	<a class="button link next-button" href="{% url 'web:ethereum_wallet' %}">Get gift</a>
+		  	<a class="button link capability-button" href="receiving">Capability of NFT</a>
 	  	</main>
 	</div>
 </body>
