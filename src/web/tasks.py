@@ -35,7 +35,7 @@ def warm_up_with_default_test_net_sender_and_gift(
     gift, created = Gift.objects.get_or_create(
         sender=client,
         receiver=receiver,
-        rarible_url=url,
+        rarible_image_url=url,
         rarible_title='TestTitle',  # todo: hardcoded
         rarible_description='TestDescription',
         obtaining_url=obtaining_url,
