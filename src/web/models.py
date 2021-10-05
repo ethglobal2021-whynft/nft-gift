@@ -18,8 +18,8 @@ class Gift(models.Model):
 
     rarible_url = models.URLField('Url to rarible post')
     rarible_title = models.CharField(max_length=256)  # rarible has not its api for this
-    rarible_description = models.TextField()  # rarible has not its api for this
-    rarible_creator_address = models.CharField(max_length=42)  # rarible has not its api for this
+    rarible_description = models.TextField(null=True, blank=True)  # rarible has not its api for this
+    rarible_creator_address = models.CharField(max_length=42, null=True, blank=True)  # rarible has not its api for this
 
     received = models.BooleanField(default=False)
     created = models.DateTimeField(default=timezone.now)
