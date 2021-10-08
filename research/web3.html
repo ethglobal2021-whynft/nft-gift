@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <script type="text/javascript" src="./web3.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function () {
+            if (typeof web3 !== 'undefined') {
+                console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
+                window.web3 = new Web3(web3.currentProvider);
+            } else {
+                console.log('No Web3 Detected... using HTTP Provider')
+                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/a39418e6ade04bfdbccdf8f0bbcc94f1"));
+            }
+        })
+
+    function createAddress() {
+      var entropy = document.getElementById("entropy").value;
+      console.log(entropy.length);
+
+      if (!entropy.length <= 32) {
+        entropy = null;
+      }
+
+      account = web3.eth.accounts.create([entropy]);
+
+      console.log(`address: ${account.address}`);
+      console.log(`privateKey: ${account.privateKey}`);
+
+      document.getElementById("address").innerHTML = account.address;
+      document.getElementById("private_key").innerHTML = account.privateKey;
+    }
+  </script>
+</head>
+<body>
+
+  <p>enter entropy</p>
+  <input type="text" size="50" id="entropy"/>
+  <button onclick="createAddress();">Create Address</button>
+  <p>address:</p>
+  <div id="address"></div>
+  <p>private key:</p>
+  <div id="private_key"></div>
+
+</body>
+</html>
