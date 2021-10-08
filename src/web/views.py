@@ -14,6 +14,9 @@ logger = logging.getLogger(__name__)
 class GiftDetailView(DetailView):  # todo: on no object
     """1st step
     We also store special cookie, so it is kinda auth.
+
+    Return:
+        - 410 (Gone): if already received.
     """
 
     context_object_name = 'gift'
@@ -23,6 +26,9 @@ class GiftDetailView(DetailView):  # todo: on no object
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
+
+        if self.object.received:
+            return HttpResponse('The gift already transferred', status=410)  # Gone
 
         logger.debug(f"set gift id {self.object.id} to session...")
         request.session['gift'] = self.object.id
