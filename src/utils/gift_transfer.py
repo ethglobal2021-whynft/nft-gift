@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 def transfer_gift(gift: Gift, ethereum_address: str) -> bool:  # eht address check
-    """Proceed transfering to eth address."""
+    """Proceed transferring to eth address."""
 
     if gift.received:
         return True
@@ -27,7 +27,11 @@ def transfer_gift(gift: Gift, ethereum_address: str) -> bool:  # eht address che
         logger.exception('Can not transfer due to SDK')
         return False
 
-    logger.info('Gift transfered, finally mark gift as received')
+    if settings.DEBUG and settings.DEBUG_DO_NOT_MARK_GIFT_AS_RECEIVED:
+        gift.save()
+        return True
+        
+    logger.info('Gift transferred successfully, thus, mark gift as received')
     gift.received = True
     gift.save()
     return True

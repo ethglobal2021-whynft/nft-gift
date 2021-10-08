@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY") or 'foofoo'
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG_DO_NOT_MARK_GIFT_AS_RECEIVED = int(os.environ.get("DEBUG_DO_NOT_MARK_GIFT_AS_RECEIVED", default=0))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", 'localhost').split(" ")
 

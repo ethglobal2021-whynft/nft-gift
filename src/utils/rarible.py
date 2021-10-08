@@ -14,8 +14,8 @@ class RaribleSdkException(Exception):
 
 def transfer_through_rarible_sdk(receiver: str, contract: str, token: str, sender_private_key: str) -> str:
     if RARIBLE_SDK_OFF:
-        logger.info('Rarible SDK silenced =(...')
-        return 'foohash'
+        logger.info('Rarible SDK silenced...')
+        return 'rarible-sdk-silenced...'
 
     data = {
         "user_receiver": receiver,
