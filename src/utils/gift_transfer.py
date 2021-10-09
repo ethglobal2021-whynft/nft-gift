@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 def transfer_gift(gift: Gift, ethereum_address: str) -> bool:  # eht address check
     """Proceed transferring to eth address."""
 
-    if gift.received:
+    if gift.received or gift.obtaining_url == settings.URL_ONLY_FOR_DEMONSTRATION_DOGU:
         return True
 
     contract, token = gift.url_to_contract_and_token

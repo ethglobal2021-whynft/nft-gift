@@ -2,7 +2,7 @@
 import logging
 
 from django.views.generic import TemplateView, DetailView
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import HttpResponse, get_object_or_404
 
 from utils.authorizations import session_authorization_check
 from utils.gift_transfer import transfer_gift

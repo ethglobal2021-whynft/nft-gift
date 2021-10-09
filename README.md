@@ -20,7 +20,7 @@ todo: describe
 docker-compose up --build
 ```
 3. By defaults in `.env.example` there is prepared 1 gift with its special debug url to obtain. To go to the page proceed to:
-`http://localhost:8000/gift/foo`
+`http://localhost:8000/gift/url-only-for-demonstration-dogu-without-transferring`
 
 ### To stop
 `cntrl + c`

@@ -1,15 +1,18 @@
 # todo: hardcoded warming up
 import logging
+
+from django.conf import settings
 from django.core.mail import send_mail
 
 from web.models import Client, Gift
+
 
 logger = logging.getLogger(__name__)
 
 
 def warm_up_with_default_sender_and_gift(
-        url="https://rinkeby.rarible.com/token/0x509fd4cdaa29be7b1fad251d8ea0fca2ca91eb60:11176",
-        obtaining_url='url-only-for-demonstration-dogu-without-transferring',
+        url="https://rinkeby.rarible.com/token/0x509fd4cdaa29be7b1fad251d8ea0fca2ca91eb60:111767",
+        obtaining_url=settings.URL_ONLY_FOR_DEMONSTRATION_DOGU,
 ):
     """De facto it is our workflow.
 
@@ -26,6 +29,7 @@ def warm_up_with_default_sender_and_gift(
         rarible_url=url,
         rarible_title='The Dogu',  # todo: hardcoded
         rarible_description='#CoreWaDoguDes #これはドーグです ',
+        rarible_creator_address='0x795a04d0f74e892c452bb45747dffdcda286fbe7',
         obtaining_url=obtaining_url,
         text='Hey, Bob, I congratulate you on your birthday and present the asset to your collection. May your life be as incredible as this picture <3',
     )

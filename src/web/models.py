@@ -16,7 +16,7 @@ class Gift(models.Model):
     obtaining_url = models.CharField("Url that match receiver with a gift", unique=True, max_length=256)  # todo: create generator
     text = models.TextField('Your wishes')
 
-    rarible_url = models.URLField('Url to rarible post')
+    rarible_url = models.URLField('Url to rarible post', unique=True)
     rarible_title = models.CharField(max_length=256)  # rarible has not its api for this
     rarible_description = models.TextField(null=True, blank=True)  # rarible has not its api for this
     rarible_creator_address = models.CharField(max_length=42, null=True, blank=True)  # rarible has not its api for this

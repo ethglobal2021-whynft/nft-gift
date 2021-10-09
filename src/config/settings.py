@@ -154,3 +154,6 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+# todo: rm after pres?
+URL_ONLY_FOR_DEMONSTRATION_DOGU = 'url-only-for-demonstration-dogu-without-transferring'
