@@ -66,18 +66,13 @@
 				<a class="keys-button link" href="{% url 'web:send_and_check' 'todo' %}">I saved the keys, start sending</a> // todo: wallet from js code
 			</div>
 			<div class="enter visually-hidden">
+				<h2 class="confirmation_title visually-hidden special_font">Check address to send NFT</h2>
 				<label for="user-vallet">
     	            <input  class="enter_input" type="text" name="user-vallet" placeholder="Enter your ETH address" id="seed-phrase">
     	        </label>
 				<button class="enter-button">Enter</button>
-			</div>
-			<div class="confirmation visually-hidden">
-				<h2 class="confirmation_title special_font">Check address to send NFT</h2>
-				<div class="keys_item">
-					<p class="key"></p>
-				</div>
-				<p>Check the correctness of the address, if you made a mistake, the sending cannot be canceled</p>
-				<a class="confirmation-button link" href="checking_page">Send NFT</a>
+				<p class="visually-hidden  confirmation_text">Check the correctness of the address, if you made a mistake, the sending cannot be canceled</p>
+				<a class="confirmation-button link visually-hidden" href="checking_page">Send NFT</a>
 			</div>
 			<div class="steps receiving_steps">
 				<ul class="steps_list list">
@@ -111,9 +106,13 @@
     var generationButton = document.querySelector(".generation-button");
     var keysButton = document.querySelector(".keys-button");
     var enterButton = document.querySelector(".enter-button");
+    var confirmationText = document.querySelector(".confirmation_text");
+    var confirmationTitle = document.querySelector(".confirmation_title");
     var confirmationButton = document.querySelector(".confirmation-button");
     var copyPrivateKeyButton = document.querySelector(".keys_advice-private");
     var copyPublicKeyButton = document.querySelector(".keys_advice-public");
+	var userWallet = document.querySelector(".enter_input");
+	var enterButtonContainer = document.querySelector(".button-container");
 
     var privateKey = document.querySelector(".keys_private");
     var publicKey = document.querySelector(".keys_public");
@@ -163,11 +162,14 @@
     enterButton.addEventListener("click", function (evt) {
         evt.preventDefault();
         choiseTitle.classList.add("visually-hidden");
-        enterBlock.classList.add("visually-hidden");
-        confirmationBlock.classList.remove("visually-hidden");
+        confirmationTitle.classList.remove("visually-hidden");
+        confirmationText.classList.remove("visually-hidden");
+        confirmationButton.classList.remove("visually-hidden");
+        userWalletInput.setAttribute("disabled", "disabled");
         yesButton.classList.add("visually-hidden");
         noButton.classList.add("visually-hidden");
         stepItem.classList.add("current_step");
+		enterButtonContainer.classList.add("visually-hidden");
       });
 
     copyPrivateKeyButton.addEventListener("click", function (evt) {

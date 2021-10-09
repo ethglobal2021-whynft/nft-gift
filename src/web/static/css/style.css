@@ -38,14 +38,13 @@ input[type="radio"].visually-hidden {
 
 .link {
   text-decoration: none;
-  color: ;
 }
 
 .list {
   display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .page-body {
@@ -54,24 +53,23 @@ input[type="radio"].visually-hidden {
   background-position-x: center;
   margin: 0;
   padding: 0px;
-  font-family: ;
   background-image: url(img/desktop-back.png);
   background-repeat: no-repeat;
  }
 
 .button {
-	background-color: none;
-	color: white;
-	font-size: ;
-	border: none;
+  background-color: none;
+  color: white;
+  font-size: ;
+  border: none;
 }
 
 .modal {
-	display: none;
+  display: none;
 }
 
 .container {
-  width: 1200px;
+  width: 375px;
   position: relative;
   margin: 0px auto;
   padding: 0px;
@@ -80,36 +78,28 @@ input[type="radio"].visually-hidden {
 /* Header */
 .main_header {
   padding-top: 40px;
-  width: 1200px;
+  width: 340px;
   margin: 0px auto 50px;
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 40px;
 }
 
 .header_link {
-  color: #5FAC5D;
-  text-decoration: underline;
+  display: none;
 }
 
 .menu {
-  width: 260px;
-  justify-content: space-between;
+  display: none;
 }
 
-.menu_item {
-  color: black;
-}
 
 /* Main */
 .main_title {
   margin: 0px;
   font-style: normal;
   font-weight: bold;
-  font-size: 66px;
-  line-height: 80px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 /* Card of gift */
@@ -126,8 +116,8 @@ input[type="radio"].visually-hidden {
 }
 
 .gift_pic {
-  width:  539px;
-  height: 404px;
+  width: 255px;
+  height: 191px;
 }
 
 .description_title {
@@ -140,27 +130,27 @@ input[type="radio"].visually-hidden {
 .description_text {
   margin: 15px 0px 43px;
   color: #8C8C8C;
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .description_link {
   color: #5FAC5D;
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .description_author {
   color: #5FAC5D;
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .message {
-  background-image: url(img/card-back.png);
+  background-image: url(img/mobile-card-back.png);
   background-repeat: no-repeat;
-  width: 600px;
-  height: 223px;
+  width: 338px;
+  height: 161px;
   padding: 26px 0px 0px 72px;
 }
 
@@ -183,7 +173,7 @@ input[type="radio"].visually-hidden {
 }
 
 .message_title {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 30px;
 }
 
@@ -194,7 +184,7 @@ input[type="radio"].visually-hidden {
 }
 
 .message_text {
-  width: 495px;
+  width: 314px;
   font-size: 14px;
   line-height: 28px;
 }
@@ -202,32 +192,7 @@ input[type="radio"].visually-hidden {
 /* Steps */
 
 .steps {
-  margin: 54px 0px 0px;
-  width: 1200px;
-}
-
-.steps_list {
-  justify-content: space-between;
-  list-style: disc;
-}
-
-.steps_item {
-  width: 195px;
-  color: #8C8C8C;
-}
-
-.steps_title {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.steps_text {
-  font-size: 12px;
-  line-height: 24px;
-}
-
-.current_step {
-  color: black;
+  display: none;
 }
 
 /* Buttons */
@@ -237,11 +202,11 @@ input[type="radio"].visually-hidden {
   padding-top: 0px;
   padding-left: 91px;
   display: block;
-  background-image: url(img/button-green.png);
+  background-image: url(img/mobile-button-green.png);
   background-repeat: no-repeat;
-  width: 222px;
-  height: 90px;
-  font-size: 36px;
+  width: 339px;
+  height: 66px;
+  font-size: 30px;
   line-height: 80px;
 }
 
@@ -251,33 +216,22 @@ input[type="radio"].visually-hidden {
   background-image: url(img/black-button.png);
   background-position: center;
   background-repeat: no-repeat;
-  width: 155px;
-  height: 85px;
-  font-size: 36px;
+  width: 156px;
+  height: 65px;
+  font-size: 30px;
   line-height: 80px;
   margin-top: 30px; 
-}
-
-.button-black:nth-child(2) {
-  margin-left: 80px;
-  margin-right: 12px;
 }
 
 .generation-button, .enter-button {
   font-family: 'sk_concreticaregular';
   background-color: #5FAC5D;
   border: none;
-  width: 190px;
-  height: 60px;
-  font-size: 24px;
+  width: 339px;
+  height: 48px;
+  font-size: 16px;
   line-height: 28px;
-  margin-left: 36px;
-}
-
-.generation-button {
-  position: relative;
-  top: -2px;
-  margin: 0;
+  margin-top: 14px;
 }
 
 .green-button {
@@ -287,7 +241,7 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
   width: 155px;
   height: 85px;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 80px;
   margin-top: 30px; 
 }
@@ -299,77 +253,67 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
   width: 155px;
   height: 85px;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 80px;
   margin-top: 30px; 
   color: black;
 }
 
-.green-button:nth-child(2) {
-  margin-left: 80px;
-  margin-right: 12px;
-}
-
-.empty-button:nth-child(2) {
-  margin-left: 80px;
-  margin-right: 12px;
-}
-
 .confirmation-button {
   display: block;
-  background-image: url(img/send-button.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 236px;
-  height: 90px;
-  background-color: rgba(255, 255, 255, 0);
+  width: 79px;
+  height: 28px;
+  background-color: #5FAC5D;
   border: none;
-  margin: 0px auto 0px;
-  font-size: 36px;
-  line-height: 80px;
+  font-size: 16px;
+  line-height: 28px;
   color: white;
-  padding-left: 77px;
+  padding: 10px 130px;
   position: absolute;
-  top: 748px;
-  left: 447px;
+  top: 400px;
+  left: 0px;
 }
 
 
 .open-nft-button {
   display: block;
-  background-image: url(img/open-nft-button.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 255px;
-  height: 90px;
-  font-size: 36px;
-  line-height: 80px;
-  padding-left: 102px;
-  margin-top: 42px; 
+  background-color: #5FAC5D;
+  width: 79px;
+  height: 28px;
+  font-size: 16px;
+  line-height: 28px;
+  padding: 10px 130px;
+  position: absolute;
+  top: 508px;
+  left: 18px;
 }
 
 .capability-button {
-  padding-left: 63px;
-  width: 380px;
-  height: 90px;
-  background-image: url(img/capability-button.png);
+  padding: 10px 105px;
+  width: 129px;
+  height: 28px;
+  background-color: black;
+  font-size: 16px;
+  line-height: 28px;
+  margin-top: 58px;
 }
 
 .keys-button {
   display: block;
   color: white;
-  background-image: url(img/keys-button.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 619px;
-  height: 90px;
-  font-size: 36px;
-  line-height: 80px;
-  padding-left: 113px;
-  margin: 42px auto 0px; 
-  position: absolute;
-  top: 700px;
-  left: 241px;
+  background-color: #5FAC5D;
+  width: 219px;
+  height: 28px;
+  font-size: 16px;
+  line-height: 28px;
+  padding: 10px 60px;
+  margin: 12px auto 0px;
+}
+
+.button-container {
+  padding: 0;
+  margin: 0;
+  display: inline;
 }
 
 .key {
@@ -380,13 +324,14 @@ input[type="radio"].visually-hidden {
 
 .choise {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
 }
 
 .choise_title {
   font-weight: bold;
-  font-size: 66px;
-  line-height: 80px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .question {
@@ -404,9 +349,9 @@ input[type="radio"].visually-hidden {
 
 
 .explanation_answer {
-  width: 979px;
-  font-size:  14px;
-  line-height: 30px;
+  width: 339px;
+  font-size:  12px;
+  line-height: 24px;
 }
 
 .explanation_answer p {
@@ -415,21 +360,25 @@ input[type="radio"].visually-hidden {
 
 .create_input, .enter_input {
   margin-right: 36px; 
-  width: 527px;
-  height: 28px;
-  font-size: 24px;
+  width: 339px;
+  height: 48px;
+  font-size: 16px;
   line-height: 28px;
-  padding: 16px 30px;
+  padding: 10px 12px;
+  border: none;
+  background-color: #F7F7F7;
 }
 
 .create_title {
-  font-size: 24px;
-  line-height: 40px;
+  font-size: 14px;
+  line-height: 25px;
+  width: 287px;
 }
 
 .create_title span {
-  font-size: 12px;
-  line-height: 40px;
+  font-size: 14px;
+  line-height: 25px;
+  color: #8C8C8C;
 }
 
 .receiving_steps {
@@ -444,10 +393,10 @@ input[type="radio"].visually-hidden {
 
 .key {
   display: block;
-  background-color: white;
-  width: 527px;
-  height: 28px;
-  font-size: 24px;
+  background-color: #F7F7F7;
+  width: 339px;
+  height: 48px;
+  font-size: 16px;
   line-height: 28px;
   padding: 16px 30px;
   color: black;
@@ -462,14 +411,7 @@ input[type="radio"].visually-hidden {
 }
 
 .keys_advice {
-  font-family: 'sk_concreticaregular';
-  width: 577px;
-  height: 60px;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  line-height: 28px;
-  margin-top: 36px;
+  display: none;
 }
 
 .confirmation {
@@ -478,8 +420,8 @@ input[type="radio"].visually-hidden {
 
 .confirmation_title {
   font-weight: bold;
-  font-size: 66px;
-  line-height: 80px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .question_container {
@@ -487,6 +429,11 @@ input[type="radio"].visually-hidden {
 }
 
 /* Checking page */
+
+.gift-card-checking {
+  flex-wrap: wrap;
+  position: relative;
+}
 
 .checking_text {
   font-size: 16px;
@@ -497,10 +444,322 @@ input[type="radio"].visually-hidden {
   border: 1px solid #5FAC5D;
 }
 
+.checking_img:nth-child(2) {
+  width: 103px;
+  height: 76px;
+}
 
+.checking_img:nth-child(4) {
+  width: 103px;
+  height: 61px;
+}
 
+@media (min-width: 375px) {
+  .container {
+    width: 1200px;
+  }
 
+  .main_header {
+    padding-top: 40px;
+    width: 1200px;
+    margin: 0px auto 50px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+  }
 
+  .header_link {
+    display: block;
+    color: #5FAC5D;
+   text-decoration: underline;
+  }
 
+  .menu {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+  }
 
+  .menu_item {
+    color: black;
+  }
 
+  .main_title {
+    font-size: 66px;
+    line-height: 80px;
+  }
+
+  .description_text {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .description_link {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .description_author {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .message {
+    width: 600px;
+    height: 223px;
+    background-image: url(img/card-back.png);
+  }
+
+  .message_title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .message_text {
+    width: 495px;
+  }
+
+  .steps {
+    margin: 118px 0px 0px;
+    width: 1200px;
+    display: block;
+  }
+
+  .steps_list {
+    justify-content: space-between;
+    list-style: disc;
+  }
+
+  .steps_item {
+    width: 195px;
+    color: #8C8C8C;
+  }
+
+  .steps_title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .steps_text {
+    font-size: 12px;
+   line-height: 24px;
+  }
+
+  .current_step {
+    color: black;
+  }
+
+  .next-button, .capability-button {
+    margin: 48px auto 60px;
+    padding-left: 91px;
+    background-image: url(img/button-green.png);
+    width: 222px;
+    height: 90px;
+    font-size: 36px;
+  }
+
+  .button-black {
+    background-image: url(img/black-button.png);
+    width: 155px;
+    height: 85px;
+    font-size: 36px;
+    margin-top: 30px; 
+  }
+
+  .button-black:nth-child(2) {
+    margin-left: 80px;
+    margin-right: 12px;
+  }
+
+  .choise_title {
+    font-size: 66px;
+    line-height: 80px;
+  }
+
+  .explanation_answer {
+    width: 979px;
+    font-size:  14px;
+    line-height: 30px;
+  }
+
+  .create_title {
+    font-size: 24px;
+    line-height: 40px;
+    width: 697px;
+  }
+
+  .create_title span {
+    font-size: 12px;
+    line-height: 40px;
+  }
+
+  .create_input, .enter_input {
+    margin-right: 36px; 
+    width: 527px;
+    height: 28px;
+    font-size: 24px;
+    padding: 16px 30px;
+  }
+
+  .generation-button, .enter-button {
+    width: 190px;
+    height: 60px;
+    font-size: 24px;
+    margin-left: 36px;
+    margin-top: 0;
+  }
+
+  .generation-button {
+    position: relative;
+    top: -2px;
+    margin: 0;
+  }
+
+  .green-button {
+    width: 155px;
+    height: 85px;
+    font-size: 36px;
+    line-height: 80px;
+    margin-top: 30px; 
+  }
+  .empty-button {
+    width: 155px;
+    height: 85px;
+    font-size: 36px;
+    margin-top: 30px;
+  }
+
+  .green-button:nth-child(2) {
+    margin-left: 80px;
+   margin-right: 12px;
+  }
+
+  .empty-button:nth-child(2) {
+   margin-left: 80px;
+   margin-right: 12px;
+  }
+
+  .key {
+    background-color: white;
+    width: 527px;
+    height: 28px;
+    font-size: 24px;
+    padding: 16px 30px;
+  }
+
+  .keys_advice {
+    display: block;
+    font-family: 'sk_concreticaregular';
+    width: 577px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 36px;
+  }
+
+  .keys_item {
+    display: flex;
+  }
+
+  .keys-button {
+    display: block;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(img/keys-button.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 619px;
+    height: 90px;
+    font-size: 36px;
+    line-height: 80px;
+    padding-left: 113px;
+    margin: 42px auto 0px; 
+    position: absolute;
+    top: 700px;
+    left: 241px;
+  }
+
+  .gift-card-checking {
+    display: inline-grid;
+    grid-template-columns: 358px 678px;
+    column-gap: 129px;
+    flex-wrap: nowrap;
+    width: 1165px;
+  }
+
+  .open-nft-button {
+    display: block;
+    background-image: url(img/open-nft-button.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0);
+    width: 157px;
+    height: 90px;
+    font-size: 36px;
+    line-height: 80px;
+    margin-top: 42px;
+    padding: 10px 100px; 
+    top: 268px;
+    left: 0;
+  }
+
+  .capability-button {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 30px 63px;
+    width: 380px;
+    height: 70px;
+    background-image: url(img/capability-button.png);
+  }
+
+  .gift-card-container {
+    width: 358px;
+    height: 268px;
+    margin: 0;
+  }
+
+  .gift_pic {
+    width: 358px;
+    height: 268px;
+  }
+
+  .checking_img:nth-child(2) {
+    width: 190px;
+    height: 140px;
+  }
+
+  .checking_img:nth-child(4) {
+    width: 149px;
+    height: 89px;
+  }
+
+  .checking_block {
+    width: 654px;
+  }
+
+  .confirmation_title {
+    font-size: 66px;
+    line-height: 80px;
+  }
+
+  .confirmation-button {
+    background-image: url(img/send-button.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 236px;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    margin: 0px auto 0px;
+    font-size: 36px;
+    line-height: 80px;
+    color: white;
+    padding-left: 77px;
+    position: absolute;
+    top: 548px;
+    left: 447px;
+  }
+}
