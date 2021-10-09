@@ -8,7 +8,7 @@ from web.models import Client, Gift
 logger = logging.getLogger(__name__)
 
 
-def warm_up_with_default_test_net_sender_and_gift(
+def warm_up_with_default_sender_and_gift(
         url="https://rinkeby.rarible.com/token/0x509fd4cdaa29be7b1fad251d8ea0fca2ca91eb60:111668",
         obtaining_url='foo',
 ):
