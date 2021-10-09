@@ -1,6 +1,5 @@
 # todo: hardcoded warming up
 import logging
-from django.conf import settings
 from django.core.mail import send_mail
 
 from web.models import Client, Gift
@@ -9,26 +8,26 @@ logger = logging.getLogger(__name__)
 
 
 def warm_up_with_default_sender_and_gift(
-        url="https://rinkeby.rarible.com/token/0x509fd4cdaa29be7b1fad251d8ea0fca2ca91eb60:111668",
-        obtaining_url='foo',
+        url="https://rinkeby.rarible.com/token/0x509fd4cdaa29be7b1fad251d8ea0fca2ca91eb60:11176",
+        obtaining_url='url-only-for-demonstration-dogu-without-transferring',
 ):
     """De facto it is our workflow.
 
     !a lot of hardcoded values. todo
     """
-    client, created = Client.objects.get_or_create(name='sender', email='sender@google.com')
+    client, created = Client.objects.get_or_create(name='Alice', email='alice@google.com')
     logger.info(f'warmed up with {client=}')
 
-    receiver, created = Client.objects.get_or_create(name='receiver', email='receiver@google.com')
+    receiver, created = Client.objects.get_or_create(name='Bob', email='bob@google.com')
 
     gift, created = Gift.objects.get_or_create(
         sender=client,
         receiver=receiver,
         rarible_url=url,
-        rarible_title='TestTitle',  # todo: hardcoded
-        rarible_description='TestDescription',
+        rarible_title='The Dogu',  # todo: hardcoded
+        rarible_description='#CoreWaDoguDes #これはドーグです ',
         obtaining_url=obtaining_url,
-        text='Anya, I congratulate you on your birthday and present the asset to your collection. May your life be as incredible as this picture <3',
+        text='Hey, Bob, I congratulate you on your birthday and present the asset to your collection. May your life be as incredible as this picture <3',
     )
     logger.info(f'warmed up with {gift=}')
 
