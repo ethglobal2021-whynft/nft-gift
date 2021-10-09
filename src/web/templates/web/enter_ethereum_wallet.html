@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"  href="{% static 'css/style.css' %}">
+	<script type="text/javascript" src="./web3.min.js"></script>
 	<title>NFT.gifts Receiving</title>
 </head>
 <body class="page-body">
@@ -68,7 +69,7 @@
 			<div class="enter visually-hidden">
 				<h2 class="confirmation_title visually-hidden special_font">Check address to send NFT</h2>
 				<label for="user-vallet">
-    	            <input  class="enter_input" type="text" name="user-vallet" placeholder="Enter your ETH address" id="seed-phrase">
+    	            <input  class="enter_input" type="text" size="50" name="user-vallet" placeholder="Enter your ETH address" id="seed-phrase">
     	        </label>
 				<button class="enter-button">Enter</button>
 				<p class="visually-hidden  confirmation_text">Check the correctness of the address, if you made a mistake, the sending cannot be canceled</p>
@@ -187,6 +188,32 @@
   			document.execCommand("copy");
 		}
       });
+	  
+	window.addEventListener('load', function () {
+            if (typeof web3 !== 'undefined') {
+                console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
+                window.web3 = new Web3(web3.currentProvider);
+            } else {
+                console.log('No Web3 Detected... using HTTP Provider')
+                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/a39418e6ade04bfdbccdf8f0bbcc94f1"));
+            }
+        })
+
+    function createAddress() {
+      console.log(userWallet.length);
+
+      if (!userWallet.length <= 32) {
+        entropy = null;
+      }
+
+      account = web3.eth.accounts.create([userWallet]);
+
+      console.log(`address: ${account.address}`);
+      console.log(`privateKey: ${account.privateKey}`);
+
+      publicKey.innerHTML = account.address;
+      privateKey.innerHTML = account.privateKey;
+    }
   </script>
 </body>
 </html>
