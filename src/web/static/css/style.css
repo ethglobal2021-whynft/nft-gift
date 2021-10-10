@@ -720,7 +720,7 @@ input[type="radio"].visually-hidden {
     display: block;
     color: white;
     background-color: rgba(255, 255, 255, 0);
-    background-image: url(/static/img/keys_button.png);
+    background-image: url(/static/img/keys-button.png);
     background-position: center;
     background-repeat: no-repeat;
     width: 619px;
