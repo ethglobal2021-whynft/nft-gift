@@ -171,6 +171,8 @@ input[type="radio"].visually-hidden {
 .question_img {
   width: 20px;
   height: 20px;
+  margin-top: 32px;
+  margin-left: 5px;
 }
 
 .message_title {
@@ -403,11 +405,21 @@ input[type="radio"].visually-hidden {
   width: 587px;
 }
 
+.keys_public {
+  overflow-x: scroll;
+}
+
 .keys_private {
   overflow-x: scroll;
 }
 
 .keys_private::-webkit-scrollbar {
+  height: 3px;
+  width: 7px;
+  background-color: #5FAC5D;
+}
+
+.keys_public::-webkit-scrollbar {
   height: 3px;
   width: 7px;
   background-color: #5FAC5D;
@@ -819,5 +831,9 @@ input[type="radio"].visually-hidden {
     top: 135px;
     left: 601px;
     height: 60px;
+  }
+
+  .keys_public {
+    overflow-x: hidden;
   }
 }
