@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"  href="{% static 'css/style.css' %}">
 	<title>NFT.gifts Receiving</title>
+	<script type="text/javascript" src="{% static 'javascript/web3.min.js' %}"></script>
 </head>
 <body class="page-body">
 	<div class="container">
@@ -37,25 +38,25 @@
 			</div>
 			</div>
 			<div class="create visually-hidden">
-				<h2 class="create_title">Enter random text to generate unic wallet <span>(example: eat some more of these 	french buns)</span></h2>
+				<h2 class="create_title">Enter a random text to generate unic wallet <span>(example: eat some more of these 	french buns)</span></h2>
 				<label for="seed-phrase">
     	            <input  class="create_input" type="text" name="seed-phrase" placeholder="random text" id="seed-phrase">
     	        </label> 
-				<button class="generation-button button">Generate</button>
+				<button class="generation-button button" onclick="createAddress()">Generate</button>
 			</div>
 			<div class="keys visually-hidden">
 				<h2>Save the keys to send NFT</h2>
 				<ul class="keys_list list">
 					<li class="keys_item">
-						<p class="key"> </p>
+						<p class="key" id="seed-phrase-disabled"></p>
 						<button class="generation-button button">Generate</button>
 					</li>
 					<li class="keys_item">
-						<p class="keys_public key">public_key</p>
+						<p class="keys_public key" id="public_key"></p>
 						<button class="keys_advice keys_advice-public">Copy it to give other people</button>
 					</li>
 					<li class="keys_item">
-						<p class="keys_private key"> private_key</p>
+						<p class="keys_private key" id="private_key"></p>
 						<button class="keys_advice keys_advice-private">Copy it to save access to the wallet (this is the password)</button>
 					</li>
 				</ul>
@@ -68,7 +69,7 @@
 			<div class="enter visually-hidden">
 				<h2 class="confirmation_title visually-hidden special_font">Check address to send NFT</h2>
 				<label for="user-vallet">
-    	            <input  class="enter_input" type="text" name="user-vallet" placeholder="Enter your ETH address" id="seed-phrase">
+    	            <input  class="enter_input" type="text" name="user-vallet" placeholder="Enter your ETH address">
     	        </label>
 				<button class="enter-button">Enter</button>
 				<p class="visually-hidden  confirmation_text">Check the correctness of the address, if you made a mistake, the sending cannot be canceled</p>
@@ -124,6 +125,17 @@
     var enterBlock = document.querySelector(".enter");
     var confirmationBlock = document.querySelector(".confirmation");
     var successBlock = document.querySelector(".success");
+
+	window.addEventListener('load', function () {
+		if (typeof web3 !== 'undefined') {
+			console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
+			window.web3 = new Web3(web3.currentProvider);
+		} else {
+			console.log('No Web3 Detected... using HTTP Provider')
+			window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/a39418e6ade04bfdbccdf8f0bbcc94f1"));
+		//    todo: key to env
+		}
+	});
 
     noButton.addEventListener("click", function (evt) {
         evt.preventDefault();
@@ -187,6 +199,22 @@
   			document.execCommand("copy");
 		}
       });
+
+	function createAddress() {  // todo: Anna
+      var entropy = document.getElementById("seed-phrase").value;
+      console.log(entropy.length);
+      document.getElementById("seed-phrase-disabled").innerHTML = entropy;
+
+      if (!entropy.length <= 32) {
+        entropy = null;
+      }
+
+      account = web3.eth.accounts.create([entropy]);
+
+      document.getElementById("public_key").innerHTML = account.address;
+      userWallet.value = account.address;
+      document.getElementById("private_key").innerHTML = account.privateKey;
+    }
 
     function sendAndCheck() {
     	window.location = "{% url 'web:send_and_check' 1234 %}".replace(/1234/, userWallet.value);
