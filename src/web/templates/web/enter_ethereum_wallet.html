@@ -64,16 +64,21 @@
 					<p class="question">How to save the keys?</p>
 					<img class="question_img" src="{% static 'img/question-iqon.svg' %}">
 				</div>
-				<a class="keys-button link" href="{% url 'web:send_and_check' 'todo' %}">I saved the keys, start sending</a> // todo: wallet from js code
+				<a class="keys-button link" href="javascript:sendAndCheck()">I saved the keys, start sending</a>
 			</div>
 			<div class="enter visually-hidden">
 				<h2 class="confirmation_title visually-hidden special_font">Check address to send NFT</h2>
 				<label for="user-vallet">
     	            <input  class="enter_input" type="text" size="50" name="user-vallet" placeholder="Enter your ETH address" id="seed-phrase">
     	        </label>
-				<button class="enter-button">Enter</button>
+    	        <div class="enter-button-container">
+    	        	<button class="enter-button">Enter</button>
+    	        </div>				
 				<p class="visually-hidden  confirmation_text">Check the correctness of the address, if you made a mistake, the sending cannot be canceled</p>
-				<a class="confirmation-button link visually-hidden" href="checking_page">Send NFT</a>
+				<div class="change-button-container">
+					<button class="change-button visually-hidden">Change ETH address</button>
+				</div>
+				<a class="confirmation-button link visually-hidden" href="javascript:sendAndCheck()">Send NFT</a>
 			</div>
 			<div class="steps receiving_steps">
 				<ul class="steps_list list">
@@ -113,7 +118,9 @@
     var copyPrivateKeyButton = document.querySelector(".keys_advice-private");
     var copyPublicKeyButton = document.querySelector(".keys_advice-public");
 	var userWallet = document.querySelector(".enter_input");
-	var enterButtonContainer = document.querySelector(".button-container");
+	var enterButtonContainer = document.querySelector(".enter-button-container");
+	var changeWalletButton = document.querySelector(".change-button");
+	var changeButtonContainer = document.querySelector(".change-button-container");
 
     var privateKey = document.querySelector(".keys_private");
     var publicKey = document.querySelector(".keys_public");
@@ -166,11 +173,27 @@
         confirmationTitle.classList.remove("visually-hidden");
         confirmationText.classList.remove("visually-hidden");
         confirmationButton.classList.remove("visually-hidden");
-        userWalletInput.setAttribute("disabled", "disabled");
+        userWallet.setAttribute("disabled", "disabled");
         yesButton.classList.add("visually-hidden");
         noButton.classList.add("visually-hidden");
         stepItem.classList.add("current_step");
 		enterButtonContainer.classList.add("visually-hidden");
+		changeWalletButton.classList.remove("visually-hidden");
+		changeButtonContainer.classList.remove("visually-hidden");
+      });
+
+    changeWalletButton.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        choiseTitle.classList.remove("visually-hidden");
+        confirmationTitle.classList.add("visually-hidden");
+        confirmationText.classList.add("visually-hidden");
+        confirmationButton.classList.add("visually-hidden");
+        userWallet.removeAttribute("disabled");
+        yesButton.classList.remove("visually-hidden");
+        noButton.classList.remove("visually-hidden");
+        stepItem.classList.remove("current_step");
+		enterButtonContainer.classList.remove("visually-hidden");
+		changeButtonContainer.classList.add("visually-hidden");
       });
 
     copyPrivateKeyButton.addEventListener("click", function (evt) {
@@ -214,6 +237,10 @@
       publicKey.innerHTML = account.address;
       privateKey.innerHTML = account.privateKey;
     }
+
+    function sendAndCheck() {
+    	window.location = "{% url 'web:send_and_check' 1234 %}".replace(/1234/, userWallet.value);
+	}
   </script>
 </body>
 </html>

@@ -32,12 +32,12 @@
 	  	<main>
 		  	<h1 class="special_font main_title">You received a NFT gift</h1>
 		  	<div class="gift-card">
-			  	<div style="width:  539px; height: 404px;"><img class="gift_pic" src="{{ gift.rarible_image_url }}"></div>
+			  	<div><img class="gift_pic" src="{{ gift.rarible_image_url }}"></div>
 		      	<div class="gift-card_description description">
 		    	  	<h2 class="description_title">{{ gift.rarible_title }}</h2>
 		    	  	<p class="description_text">{{ gift.rarible_description }}
 		    	  		<a class="description_link" href="">more</a><br><!-- todo: wtf? -->
-		    	  		<span class="description_author">The author is {{ gift.rarible_author }}</span></p>
+		    	  		<span class="description_author">The author is {{ gift.rarible_creator_address }}</span></p>
 		    	  	<div class="message">
 		    	  		<div class="name">
 		    	  			<img class="star" src="{% static 'img/star.svg' %}">
