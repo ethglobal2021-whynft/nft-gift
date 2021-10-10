@@ -10,6 +10,15 @@
 ### Decentralized Version
 todo: describe
 
+## ToDo
+
+- [ ] compose files to deploy folder
+- [ ] prod entrypoint and etc.
+- [ ] deprecate `front/`
+- [ ] debug off
+- [ ] nft gift (domain) or nft.gifts
+
+
 ## Debug
 2 simple steps:
 
