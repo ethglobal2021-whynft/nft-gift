@@ -15,6 +15,7 @@ global.window = {
     fetch: fetchApi,
 }
 
+// todo: make importable
 const config = {
 	mainnetRpc: "https://mainnet.infura.io/v3/84653a332a3f4e70b1a46aaea97f0435",
  	rinkebyRpc: "https://rinkeby.infura.io/v3/84653a332a3f4e70b1a46aaea97f0435",
