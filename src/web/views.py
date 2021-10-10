@@ -69,7 +69,7 @@ class SendAndCheckGiftView(DetailView):  # todo: view is really synced
         #     return HttpResponse(status=208)  # already reported
 
         if not to_wallet:  # todo: create eth field as in why-nft
-            return HttpResponse(status=400)
+            return HttpResponse('no user address specified', status=400)
 
         logger.info(
             f"Start sending gift {self.object.id} to {self.object.receiver.email} with wallet: {to_wallet}"
@@ -78,6 +78,6 @@ class SendAndCheckGiftView(DetailView):  # todo: view is really synced
         if not transfered:
             return HttpResponse('can not transfer: rarible SDK', status=409)  # todo
 
-        logger.info(f'Finally {self.object} transfered and response ready')
+        logger.info(f'Finally {self.object} transferred. Thus, response ready')
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
