@@ -1,5 +1,5 @@
 'use strict';
-import { Transfer } from './lazy-mint.js';
+import { Transfer } from './rarible-transfer.js';
 
 
 import express from 'express';
