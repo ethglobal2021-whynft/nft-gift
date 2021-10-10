@@ -53,7 +53,7 @@ input[type="radio"].visually-hidden {
   background-position-x: center;
   margin: 0;
   padding: 0px;
-  background-image: url(img/desktop-back.png);
+  background-image: url(/static/img/desktop-back.png);
   background-repeat: no-repeat;
  }
 
@@ -147,7 +147,7 @@ input[type="radio"].visually-hidden {
 }
 
 .message {
-  background-image: url(img/mobile-card-back.png);
+  background-image: url(/static/img/mobile-card-back.png);
   background-repeat: no-repeat;
   width: 338px;
   height: 161px;
@@ -203,7 +203,7 @@ input[type="radio"].visually-hidden {
   padding-top: 0px;
   padding-left: 91px;
   display: block;
-  background-image: url(img/mobile-button-green.png);
+  background-image: url(/static/img/mobile-button-green.png);
   background-repeat: no-repeat;
   width: 339px;
   height: 66px;
@@ -214,7 +214,7 @@ input[type="radio"].visually-hidden {
 .button-black {
   font-family: 'sk_concreticaregular';
   background-color: rgba(255, 255, 255, 0);
-  background-image: url(img/black-button.png);
+  background-image: url(/static/img/black-button.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 156px;
@@ -238,7 +238,7 @@ input[type="radio"].visually-hidden {
 
 .green-button {
   background-color: rgba(255, 255, 255, 0);
-  background-image: url(img/green-button.png);
+  background-image: url(/static/img/green-button.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 155px;
@@ -250,7 +250,7 @@ input[type="radio"].visually-hidden {
 
 .empty-button {
   background-color: rgba(255, 255, 255, 0);
-  background-image: url(img/empty-button.png);
+  background-image: url(/static/img/empty-button.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 155px;
@@ -326,11 +326,6 @@ input[type="radio"].visually-hidden {
   line-height: 28px;
   border: none;
 }
-
-.key {
-  font-family: 'sk_concreticaregular';
-}
-
 /* Receiving */
 
 .choise {
@@ -354,7 +349,7 @@ input[type="radio"].visually-hidden {
 .question::after {
   width: 20px;
   height: 20px;
-  background-image: url(img/question-iqon.svg);
+  background-image: url(/static/img/question-iqon.svg);
   margin-left: 14px;
 }
 
@@ -402,7 +397,24 @@ input[type="radio"].visually-hidden {
   position: relative;
 }
 
+.key-container {
+  padding: 0px;
+  margin: 0px;
+  width: 587px;
+}
+
+.keys_private {
+  overflow-x: scroll;
+}
+
+.keys_private::-webkit-scrollbar {
+  height: 3px;
+  width: 7px;
+  background-color: #5FAC5D;
+}
+
 .key {
+  font-family: 'sk_concreticaregular';
   display: block;
   background-color: #F7F7F7;
   width: 339px;
@@ -524,7 +536,7 @@ input[type="radio"].visually-hidden {
   .message {
     width: 600px;
     height: 223px;
-    background-image: url(img/card-back.png);
+    background-image: url(/static/img/card-back.png);
   }
 
   .message_title {
@@ -575,14 +587,14 @@ input[type="radio"].visually-hidden {
   .next-button, .capability-button {
     margin: 48px auto 60px;
     padding-left: 91px;
-    background-image: url(img/button-green.png);
+    background-image: url(/static/img/button-green.png);
     width: 222px;
     height: 90px;
     font-size: 36px;
   }
 
   .button-black {
-    background-image: url(img/black-button.png);
+    background-image: url(/static/img/black-button.png);
     width: 155px;
     height: 85px;
     font-size: 36px;
@@ -608,7 +620,7 @@ input[type="radio"].visually-hidden {
   .create_title {
     font-size: 24px;
     line-height: 40px;
-    width: 697px;
+    width: 720px;
   }
 
   .create_title span {
@@ -640,7 +652,7 @@ input[type="radio"].visually-hidden {
   .generation-button {
     position: relative;
     top: -2px;
-    margin: 0;
+    margin: 0px 0px 0px 36px;
   }
 
   .green-button {
@@ -685,6 +697,7 @@ input[type="radio"].visually-hidden {
     font-size: 20px;
     line-height: 28px;
     margin-top: 36px;
+    margin-left: 30px;
   }
 
   .keys_item {
@@ -695,7 +708,7 @@ input[type="radio"].visually-hidden {
     display: block;
     color: white;
     background-color: rgba(255, 255, 255, 0);
-    background-image: url(img/keys_button.png);
+    background-image: url(/static/img/keys_button.png);
     background-position: center;
     background-repeat: no-repeat;
     width: 619px;
@@ -724,7 +737,7 @@ input[type="radio"].visually-hidden {
 
   .open-nft-button {
     display: block;
-    background-image: url(img/open-nft-button.png);
+    background-image: url(/static/img/open-nft-button.png);
     background-position: center;
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0);
@@ -743,7 +756,7 @@ input[type="radio"].visually-hidden {
     padding: 30px 63px;
     width: 380px;
     height: 70px;
-    background-image: url(img/capability-button.png);
+    background-image: url(/static/img/capability-button.png);
   }
 
   .gift-card-container {
@@ -753,8 +766,8 @@ input[type="radio"].visually-hidden {
   }
 
   .gift_pic {
-    width: 539px;
-    height: 404px;
+    width: 358px;
+    height: 268px;
   }
 
   .checking_img:nth-child(2) {
@@ -781,7 +794,7 @@ input[type="radio"].visually-hidden {
   }
 
   .confirmation-button {
-    background-image: url(img/send-button.png);
+    background-image: url(/static/img/send-button.png);
     background-position: center;
     background-repeat: no-repeat;
     width: 153px;

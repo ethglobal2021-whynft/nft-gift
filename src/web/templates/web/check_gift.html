@@ -6,7 +6,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"  href="{% static 'css/style.css' %}">
-	<title>NFT.gifts checking</title>
+	<title>NFT Gift Checking</title>
+
+	<!--	todo: use base for the same head-->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon_pack/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_pack/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_pack/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static 'favicon_pack/site.webmanifest' %}">
+	<link rel="mask-icon" href="{% static 'favicon_pack/safari-pinned-tab.svg' %}" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
 </head>
 <body class="page-body">
 	<div class="container">
@@ -24,7 +34,7 @@
 		  	<div class="gift-card gift-card-checking">
 			  	<div  class="gift-card-container">
 			  		<div  class="gift-card-container"><img class="gift_pic gift_pic-checking" src="{{ gift.rarible_image_url }}"></div>
-			  		<a class="button link open-nft-button" href="https://rarible.com/token/0x60f80121c31a0d46b5279700f9df786054aa5ee5:1375655?tab=details">Open NFT</a>
+			  		<a class="button link open-nft-button" href="{{gift.rarible_url}}">Open NFT</a>
 			  	</div>
 		      	<div class="checking_block">
 		    	  	<p class="checking_text">We sent the work to your address, now on Rarible your address is listed as the owner of NFT</p>

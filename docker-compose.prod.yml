@@ -1,0 +1,41 @@
+version: "3.9"
+
+volumes:
+  postgres_data_dev:
+
+x-app: &prod-settings
+  logging:
+    driver: "json-file"
+    options:
+      max-file: "3"
+      max-size: "10m"
+  restart: always
+
+services:
+  db:
+    <<: *prod-settings
+    image: postgres:13.0
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+
+  web:
+    <<: *prod-settings
+    build: src
+#    command: todo
+    volumes:
+      - ./src/:/opt/
+    ports:
+      - 8070:8000
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+
+  rarible_sdk:
+    <<: *prod-settings
+    build: rarible_sdk
+    command: [ "npm", "run", "dev" ]
+    volumes:
+      - ./rarible_sdk/src/:/usr/src/app/src/

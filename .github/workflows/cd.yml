@@ -1,0 +1,37 @@
+name: Deploy compose after release on remote with help of ssh connection
+
+on:
+  release:
+    types: [ released ]
+
+env:
+  COMPOSE_PATH: /opt/nft-gift
+  BRANCH: main
+
+jobs:
+  update-git-and-deploy-master-branch:
+    name: Connect via ssh from github linux docker and proceed commands on prod server
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+    - name: deploy with remote ssh commands
+      uses: appleboy/ssh-action@master
+      env:
+        SHA: ${{ github.sha }}
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        passphrase: ${{ secrets.SSH_PASS_PHRASE }}
+        envs: COMPOSE_PATH,BRANCH,SHA
+        script_stop: true
+        script: |
+          echo "go to repo $COMPOSE_PATH"
+          cd $COMPOSE_PATH
+          echo "fetch $BRANCH with predifined deploy key"
+          git fetch origin $BRANCH
+          echo "checkout repo to release commit $SHA"
+          git checkout $SHA
+          echo "restart containers with help of docker-compose up --build -d"
+          docker-compose -f docker-compose.prod.yml up --build -d
