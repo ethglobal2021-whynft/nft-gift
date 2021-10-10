@@ -63,7 +63,7 @@
 					<p class="question">How to save the keys?</p>
 					<img class="question_img" src="{% static 'img/question-iqon.svg' %}">
 				</div>
-				<a class="keys-button link" href="{% url 'web:send_and_check' 'todo' %}">I saved the keys, start sending</a> // todo: wallet from js code
+				<a class="keys-button link" href="javascript:sendAndCheck()">I saved the keys, start sending</a>
 			</div>
 			<div class="enter visually-hidden">
 				<h2 class="confirmation_title visually-hidden special_font">Check address to send NFT</h2>
@@ -72,7 +72,7 @@
     	        </label>
 				<button class="enter-button">Enter</button>
 				<p class="visually-hidden  confirmation_text">Check the correctness of the address, if you made a mistake, the sending cannot be canceled</p>
-				<a class="confirmation-button link visually-hidden" href="checking_page">Send NFT</a>
+				<a class="confirmation-button link visually-hidden" href="javascript:sendAndCheck()">Send NFT</a>
 			</div>
 			<div class="steps receiving_steps">
 				<ul class="steps_list list">
@@ -187,6 +187,10 @@
   			document.execCommand("copy");
 		}
       });
+
+    function sendAndCheck() {
+    	window.location = "{% url 'web:send_and_check' 1234 %}".replace(/1234/, userWallet.value);
+	}
   </script>
 </body>
 </html>
