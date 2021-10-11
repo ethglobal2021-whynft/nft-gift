@@ -69,26 +69,26 @@ export async function deployImpl(web3) {
 //**************************** GIVE PERMISSION TO TRANSFER **********************************/
 
 
-export async function PermissionToTransfer(debug, privateKeyExt, ownerAddress, nftContract, token) {
+export async function PermissionToTransfer(debug, privateKeyExt, ownerAddress, nftContract, nftToken) {
+    // grant permission to ownerAddress. Thus, to contract
     const maker = new HDWalletProvider(privateKeyExt, config.rinkebyRpc)
     const web3 = new Web3(maker)
-//    nftContract = Web3.utils.toChecksumAddress(nftContract)
-    permissionToTransferImpl(web3, nftContract, ownerAddress, token)
+    permissionToTransferImpl(web3, nftContract, ownerAddress, nftToken)
 }
 
 export async function permissionToTransferImpl(web3, nftContract, ownerAddress, tokenId) {
     try {
-        const contractName = 'Darilka' // Change this for other contract
-        const constructorArgs = []    // Put constructor args (if any) here for your contract
+        // const contractName = 'Darilka' // Change this for other contract
+        // const constructorArgs = []    // Put constructor args (if any) here for your contract
 
         // Note that the script needs the ABI which is generated from the compilation artifact.
         // Make sure contract is compiled and artifacts are generated
 
-        const artifactsPath = `/usr/src/app/src/contracts/${contractName}.json` // Change this for different path
+        // const artifactsPath = `/usr/src/app/src/contracts/${contractName}.json` // Change this for different path
 
-        const content = fs.readFileSync(artifactsPath, 'utf8');
+        // const content = fs.readFileSync(artifactsPath, 'utf8');
 
-        const metadata = JSON.parse(content)
+        // const metadata = JSON.parse(content)
         const accounts = await web3.eth.getAccounts()
 
         let contract = new web3.eth.Contract(erc721Abi, nftContract)
@@ -96,7 +96,7 @@ export async function permissionToTransferImpl(web3, nftContract, ownerAddress, 
         const tx = await contract.methods.approve(ownerAddress, tokenId).send({
             from: accounts[0],
             gas: 1500000,
-            gasPrice: '30000000000'
+            gasPrice: '30000000000'  // todo
         }).then((result) => {
             }, (error) => {
         console.log(error);

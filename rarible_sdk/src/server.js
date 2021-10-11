@@ -48,7 +48,13 @@ app.post('/permission', async (request, response) => {
   // Pass ipfs & user_address
   console.log('get', request.body);
   try {
-    const link = await PermissionToTransfer(request.body.debug, request.body.private_ext, request.body.owner_address, request.body.nft_contract, request.body.token)
+    const link = await PermissionToTransfer(
+        request.body.debug,
+        request.body.private_ext,
+        request.body.owner_address,
+        request.body.nft_contract,
+        request.body.nft_token
+    )
     console.log('Response with link', link);
     response.json({link: link, status: "OK"});
   } catch (error) {
