@@ -8,7 +8,7 @@
 - With link receiver specify wallet and wait for transfer (from the our address to specified address) to be completed
 
 ### Decentralized Version
-todo: describe
+todo: checkout [research notebook](https://github.com/ethglobal2021-whynft/nft-gift/blob/main/research/darilka_contract_workflow.ipynb)
 
 ## ToDo
 
