@@ -1,4 +1,9 @@
 # nft-gift
+Before Hack, we had experience working with NFT, and we realized that people often buy NFT to resell it.
+
+To make NFT market strong, we need to come up with some kind of strong collect use case. But why do people need to collect NFT?
+
+Once we met an example in real life: one woman wanted to buy an artwork of a famous artist as a gift to her boss. Neither the boss nor the woman understood anything about the crypt, but the artwork had to be presented. We realized that there is a demand for gifts in the NFT and created an easy way to receive such gifts. This may be needed not only by ordinary people, but also by companies and charitable foundations, and various NFT agencies and Gamers.
 
 ## User Flow
 ### Centralized Version (current)
