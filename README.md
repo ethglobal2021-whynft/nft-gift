@@ -17,7 +17,9 @@ Our solution consists of two parts: special smart contract and backend. The key 
 
 Backend consists of javascript blockchain callers (here we use rarible nftABI and rarible wrapper of  "safeTransferFrom" method) and local database to track & match pending gifts. Client part uses only javascript code.  
 
-An example of a fully worked out scenario (contract): https://rinkeby.etherscan.io/address/0xd4Ba7daA7F3A5DbE2453210C4D458959687C20a6
+An examples of a fully worked out scenario (contracts): 
+- https://rinkeby.etherscan.io/address/0xd4Ba7daA7F3A5DbE2453210C4D458959687C20a6
+- https://rinkeby.etherscan.io/address/0x0264837577091a402a6A62738a9e5Fecad107407
 
 > check [research notebook](https://github.com/ethglobal2021-whynft/nft-gift/blob/main/research/darilka_contract_workflow.ipynb)
 
